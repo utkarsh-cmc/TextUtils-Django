@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  
+
+    <title>TextUtils.ug</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Text_Util.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="\">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://theptech.com/text-utility/#:~:text=This%20application%20allows%20you%20to,families%20loaded%20on%20the%20project.&text=%E2%80%9CText%20Note%20Style%20of%20loaded,loaded%20families'%20text%20note%20style.">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="https://github.com/utkarsh-cmc">Github link</a>
+              </li>
+            
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="alert alert-success fade show" role="alert">
+        <strong>Welcome ! to TextUtils.ug</strong> You can analyze and customize your text here.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+   <div class="container">
+    <form action="/analyze" method="POST">   {% csrf_token%}  #A CSRF Token is a secret, 
+                                                              unique and unpredictable value a server-side application 
+                                                              generates in order to protect CSRF vulnerable resources
+
+      <p class="text-center">Enter the text and let TextUtils.ug do the magic</p>
+      <div class="container">
+      <div class="form-floating">
+        <textarea class="form-control" name = "text" placeholder="Enter your Text here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Enter text...</label>
+      </div>
+    </div>
+
+
+    <div class="custom-control custom-switch">
+        <input class="custom-control-input" type="checkbox" name="removepunc"
+        id="customswitch1">
+        <label class="custom-control-label" for="customswitch1">Remove Punctuation</label>
+      </div>
+
+      <div class="custom-control custom-switch">
+        <input class="custom-control-input" type="checkbox" name="fullcaps" id="customswitch2" >
+        <label class="custom-control-label" for="customswitch2">UPPERCASE</label>
+      </div>  
+
+      <div class="custom-control custom-switch">
+        <input class="custom-control-input" type="checkbox" name="newlineR" id="customswitch3" >
+        <label class="custom-control-label" for="customswitch3">New Line Remover</label>
+      </div>  
+
+      <div class="custom-control custom-switch">
+        <input class="custom-control-input" type="checkbox" name="xspacerem" id="customswitch4" >
+        <label class="custom-control-label" for="customswitch4">extraspace remover</label>
+      </div>  
+
+      
+      <div class="custom-control custom-switch">
+        <input class="custom-control-input" type="checkbox" name="charcount" id="customswitch5" >
+        <label class="custom-control-label" for="customswitch5">Character Count(use uniquly)</label>
+      </div> 
+
+      <button type="submit" class="btn btn-dark mt-2">Analyze Text</button>
+    </form>
+    </div>
+  
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
